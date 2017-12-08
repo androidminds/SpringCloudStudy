@@ -66,6 +66,7 @@ project("Zuul") {
 
     dependencies {
         compile("org.springframework.cloud:spring-cloud-starter-zuul")
+        compile("org.springframework.cloud:spring-cloud-starter-eureka")
     }
 }
 

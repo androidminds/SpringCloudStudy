@@ -83,6 +83,7 @@ project("Hi") {
         dependencies {
             compile("org.springframework.cloud:spring-cloud-starter-eureka")
             compile("org.springframework.cloud:spring-cloud-starter-ribbon")
+            compile("org.springframework.cloud:spring-cloud-starter-hystrix")
         }
     }
 

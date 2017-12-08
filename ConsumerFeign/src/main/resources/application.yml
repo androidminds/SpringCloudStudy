@@ -10,3 +10,7 @@ spring:
   application:
     name: ConsumerFeign
 
+feign:
+  hystrix:
+    enabled: true
+

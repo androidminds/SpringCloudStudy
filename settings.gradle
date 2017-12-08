@@ -1,3 +1,6 @@
 rootProject.name = 'SpringCloudStudy'
 
 include 'Eureka'
+include 'Zuul'
+include 'Hi'
+include 'Consumer'

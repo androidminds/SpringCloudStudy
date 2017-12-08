@@ -1,0 +1,17 @@
+spring:
+  profiles: peer1                                 # 指定profile=peer1
+  application:
+      name: Eureka-Server
+
+server:
+  port: 8761   # 注册服务的端口号
+
+eureka:
+  instance:
+      hostname: peer1                               # 指定当profile=peer1时，主机名
+  client:
+      registerWithEureka: true
+      fetchRegistry: true
+      serviceUrl:
+        defaultZone: http://127.0.0.1:8762/eureka/      # 将自己注册到peer2这个Eureka上面去
+

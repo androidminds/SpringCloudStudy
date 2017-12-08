@@ -85,3 +85,12 @@ project("Hi") {
             compile("org.springframework.cloud:spring-cloud-starter-ribbon")
         }
     }
+
+project("ConsumerFeign") {
+    description = "ConsumerFeign"
+
+    dependencies {
+        compile("org.springframework.cloud:spring-cloud-starter-eureka")
+        compile("org.springframework.cloud:spring-cloud-starter-feign")
+    }
+}

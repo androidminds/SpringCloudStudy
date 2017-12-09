@@ -97,3 +97,11 @@ project("ConsumerFeign") {
         compile("org.springframework.cloud:spring-cloud-starter-feign")
     }
 }
+project("ConfigServer") {
+    description = "ConfigServer"
+
+    dependencies {
+        compile("org.springframework.cloud:spring-cloud-starter-eureka")
+        compile("org.springframework.cloud:spring-cloud-config-server")
+    }
+}

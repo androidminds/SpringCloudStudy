@@ -6,5 +6,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/androidminds/SpringCloudStudy.git
-          searchPaths: config
+          uri: https://github.com/androidminds/SpringCloudStudy/
+          search-paths: config/Consumer

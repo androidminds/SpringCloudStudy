@@ -6,7 +6,4 @@ eureka:
     serviceUrl:
       defaultZone: ${eureka.serviceUrl:http://127.0.0.1:8761/eureka/}
 
-spring:
-  application:
-    name: Consumer
 

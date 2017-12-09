@@ -86,6 +86,8 @@ project("Hi") {
             compile("org.springframework.cloud:spring-cloud-starter-ribbon")
             compile("org.springframework.cloud:spring-cloud-starter-hystrix")
             compile("org.springframework.cloud:spring-cloud-starter-hystrix-dashboard")
+            compile("org.springframework.cloud:spring-cloud-starter-config-client")
+            compile("org.springframework.cloud:spring-boot-starter-web")
         }
     }
 

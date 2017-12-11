@@ -9,4 +9,5 @@ eureka:
 spring:
   application:
     name: Hi
-
+  zipkin:
+    base-url: http://localhost:9200

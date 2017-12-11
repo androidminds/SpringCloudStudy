@@ -42,15 +42,9 @@ allprojects {
 
 	dependencyManagement {
 		imports {
-			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR6"
 		}
 	}
-
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
-    }
 }
 
 project("Eureka") {
@@ -75,6 +69,7 @@ project("Hi") {
 
     dependencies {
         compile("org.springframework.cloud:spring-cloud-starter-eureka")
+        compile('org.springframework.cloud:spring-cloud-starter-zipkin')
     }
 }
 
@@ -88,6 +83,7 @@ project("Hi") {
             compile("org.springframework.cloud:spring-cloud-starter-hystrix-dashboard")
             compile("org.springframework.cloud:spring-cloud-starter-config")
             compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
+            compile('org.springframework.cloud:spring-cloud-starter-zipkin')
         }
     }
 
@@ -105,5 +101,16 @@ project("ConfigServer") {
     dependencies {
         compile("org.springframework.cloud:spring-cloud-starter-eureka")
         compile("org.springframework.cloud:spring-cloud-config-server")
+    }
+}
+
+project("ZipkinServer") {
+    description = "ZipkinServer"
+
+    dependencies {
+        compile("org.springframework.cloud:spring-boot-starter")
+        compile("org.springframework.cloud:spring-boot-starter-web")
+        compile("io.zipkin.java:zipkin-server")
+        compile("io.zipkin.java:zipkin-autoconfigure-ui")
     }
 }

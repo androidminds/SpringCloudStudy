@@ -16,8 +16,9 @@ public class HiApplication {
 		SpringApplication.run(HiApplication.class, args);
 	}
 
+	public static int id = 1;
 	@RequestMapping("/")
 	public String sayHi(){
-		return "Hello";
+		return "Hello" + (id++);
 	}
 }

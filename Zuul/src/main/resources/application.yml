@@ -15,7 +15,8 @@ ribbon:
   ConnectTimeout: 60000
 
 zuul:
+  ignoredServices: '*'
   routes:
     api-a:
-      path: /**
+      path: /auth/**
       serviceId: Consumer

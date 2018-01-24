@@ -6,6 +6,10 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RefreshScope
@@ -16,15 +20,7 @@ public class ConsumerController {
     @RequestMapping("/")
     public @ResponseBody
     String sayHi(){
-        return "Consumer : " + consumerService.hiService();
-    }
-
-    @Value("${web.server.port}")
-    String configPort;
-
-    @RequestMapping("/config")
-    public @ResponseBody
-    String getConfig(){
-        return "Consumer Config: " + configPort;
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        return "Consumer : " + consumerService.hiService() + ":" + request.getHeader("test");
     }
 }

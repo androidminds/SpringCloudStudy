@@ -31,6 +31,8 @@ public class MyFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
+        ctx.addZuulRequestHeader("test", "mytest");
+        /*
         log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
         Object accessToken = request.getParameter("token");
         if(accessToken == null) {
@@ -43,7 +45,7 @@ public class MyFilter extends ZuulFilter {
 
             return null;
         }
-        log.info("ok");
+        log.info("ok");*/
         return null;
     }
 }
